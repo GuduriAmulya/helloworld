@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script >
+        function changeh1Text(){
+            let h1ele=document.getElementById("myetch1")
+            h1ele.textContent="Hello World"
+        }
+        function changeParaTest(){
+            document.getElementById("mypara").innerHTML="<b> Force is with you<b>"
+        }
+        function addItem(){
+            let m=document.createElement("li")
+            let k=ddocument.getElementById("mylist")
+
+
+        }
+        </script>
+       
+</head>
+<body>
+    <div id="myetch1">
+        <h1>Hello There!!</h1>
+        <b><p id="mypara">okk</p></b>
+    </div>
+    <!-- <div id="mydiv">
+        <h1 id="myetch1">hello</h1>
+    </div> -->
+    <button
+    name=""
+    id=""
+    class="btn-btn bg-primary"
+    type="button"
+    onclick="changeh1Text()">
+    Click me</button>
+    <button
+    name=""
+    id=""
+    class="btn-btn bg-primary"
+    type="button"
+    onclick="changeParaTest()">
+    Click me</button>
+
+`<div >
+    <ul id="mylist">
+        <li>
+            hello
+        </li>
+
+    </ul>
+</div>
+
+
+    <button
+    name=""
+    id=""
+    class="btn-btn bg-primary"
+    type="button"
+    onclick="addItem()">
+    Click me</button>
+
+
+
+    
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+production dependcies
+dev dependcies
+jest,prettier,

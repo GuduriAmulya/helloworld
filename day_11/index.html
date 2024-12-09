@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+</head>
+<body>
+    <h1>Welcome to my Weather</h1>
+     
+    City
+    <br>
+    <input type="text" id="inp" >
+    <br>
+    <button name="" id="getWeatherBtn" class="btn btn-primary" type="button" >
+        Get Weather
+    </button>
+    
+    <div id="weatherResult"></div> 
+    <!-- style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
+        Weather data will be displayed here -->
+    </div>
+</body>
+<script>
+         
+         const displayData = (data) => {
+            const resultDiv = document.getElementById("weatherResult");
+            resultDiv.innerHTML = ""; // Clear previous results
+
+            if (data[city]) {
+                //console.log(data.name);
+                const weather = data[city];
+                const weatherInfo = `
+                    <p><strong>City:</strong> ${weather.name}</p>
+                    <p><strong>Temperature:</strong> ${weather.main.temp}°C</p>
+                    <p><strong>Weather:</strong> ${weather.weather[0].description}</p>
+                    <p><strong>Humidity:</strong> ${weather.main.humidity}%</p>
+                    <p><strong>Wind Speed:</strong> ${weather.wind.speed} m/s</p>
+                `;
+                resultDiv.innerHTML = weatherInfo;
+            } else {
+                resultDiv.innerHTML = "<p>City not found</p>";
+            }
+        };
+
+        const fun = async () => {
+            try {
+                let response = await fetch("http://10.10.9.128:3000/weather/Tokyo");
+                let data = await response.json();
+                let city = document.getElementById("inp").value.trim();
+                displayData(city, data);
+            } catch (error) {
+                console.error("Error fetching data: ", error);
+            }
+        };
+  
+   document.getElementById("getWeatherBtn").addEventListener('click', fun);
+   
+      
+</script>
+</html>

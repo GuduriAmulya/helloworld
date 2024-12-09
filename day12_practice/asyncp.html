@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        
+        function fetchData(data){
+            console.log("fetch adta");
+        }
+        function processData(data){
+            console.log("process");
+        }
+            function displayData(data){
+                console.log("display")
+            }
+        // fetchData("hi");
+        // processData("ok");
+        // displayData("pop");
+        // //call backs
+        // fetchData((data)=>{
+        //     processData((data,processData)=>{
+        //         displayData(processData);
+        //     });
+        // })
+       // fetchData("lii");
+       //promises
+        fetchData(data)
+        .then((data)=>processData(data))
+        .then((processData)=>displayData(processData))
+        .catch((error)=>{
+            console.log("error huh");
+        })
+        fetchData();
+
+        //Async 
+        async function run(){
+            try{
+                const data=await fetchData();
+                const processedData=await processData(data);
+                displayData(processedData);
+            }
+            catch{
+
+            }
+        }
+        //differen bet fun,callback
+        //why json convert to string not binary?
+        //nodejs=js run time engine outside browser =>
+    </script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>
